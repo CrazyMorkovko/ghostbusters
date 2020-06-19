@@ -135,12 +135,17 @@ body {
   cursor: pointer;
 }
 
-.m-menu-image {
-  display: none;
+.m-menu-icon {
+  display: block;
+  background-image: url("/img/menu.svg");
+  width: 18px;
+  height: 13px;
 }
 
-.m-menu-image.m-menu-active {
-  display: block;
+.m-menu.active + .mobile-buttons .m-menu-icon {
+  background-image: url("/img/arrowUp.svg");
+  width: 15px;
+  height: 20px;
 }
 
 .container {
