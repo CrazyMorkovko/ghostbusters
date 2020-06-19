@@ -9,6 +9,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="css/swiper.min.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -16,41 +18,43 @@
       <a href="/" class="header-logo"
         ><img src="img/Film..png" alt="Logo: film" class="logo"
       /></a>
-      <input
-        type="search"
-        class="search-input"
-        placeholder="Поиск по фильмам..."
-      />
-      <nav class="navigation">
-        <a href="#" class="navigation-link">
-          Фильмы
-        </a>
-        <a href="#" class="navigation-link">
-          ТВ
-        </a>
-        <a href="#" class="navigation-link">
-          Новости
-        </a>
-        <a href="#" class="navigation-link">
-          О сервисе
-        </a>
-      </nav>
-      <div class="button-group">
-        <button class="button signup">
-          Регистрация
-        </button>
-        <button class="button login">
-          Войти
-        </button>
+      <div class="m-menu">
+        <input
+          type="search"
+          class="search-input"
+          placeholder="Поиск по фильмам..."
+        />
+        <nav class="navigation">
+          <a href="#" class="navigation-link">
+            Фильмы
+          </a>
+          <a href="#" class="navigation-link">
+            ТВ
+          </a>
+          <a href="#" class="navigation-link">
+            Новости
+          </a>
+          <a href="#" class="navigation-link">
+            О сервисе
+          </a>
+        </nav>
+        <div class="button-group">
+          <button class="button signup">
+            Регистрация
+          </button>
+          <button class="button login">
+            Войти
+          </button>
+        </div>
       </div>
       <div class="mobile-buttons">
-        <button class="search-button">
-          <img src="img/search-icon.svg" alt="search" />
-        </button>
         <button class="m-menu-button">
-          <span class="menu-line"></span>
-          <span class="menu-line"></span>
-          <span class="menu-line"></span>
+          <img
+            class="m-menu-image m-menu-active"
+            src="img/menu.svg"
+            alt="menu"
+          />
+          <img class="m-menu-image" src="img/arrowUp.svg" alt="arrow" />
         </button>
       </div>
     </header>
@@ -59,10 +63,14 @@
         <div class="film-wrapper">
           <div class="film-trailer">
             <img src="img/poster.jpg" alt="poster" class="poster" />
-            <button class="trailer-button">
+            <a
+              data-fancybox
+              href="https://www.youtube.com/watch?v=o705uydkgew"
+              class="trailer-button"
+            >
               <img class="trailer-button-icon" src="img/play.svg" alt="play" />
               <span class="trailer-button-text">Посмотреть трейлер</span>
-            </button>
+            </a>
           </div>
           <!-- /.hero-trailer -->
           <div class="film-text">
@@ -166,14 +174,14 @@
     <section class="cast">
       <div class="container">
         <div class="tabs">
-          <h2 class="section-title active">
+          <h2 class="tab section-title active" data-target="#actors">
             Актеры
           </h2>
-          <h2 class="section-title">
+          <h2 class="tab section-title" data-target="#creators">
             Создатели
           </h2>
         </div>
-        <div class="tabs-content">
+        <div class="tabs-content visible" id="actors">
           <div class="card">
             <img src="img/actors/1.jpg" alt="Carrie Coon" class="card-image" />
             <div class="card-text">
@@ -280,42 +288,183 @@
           <!-- /.card -->
         </div>
         <!-- /.tabs-content -->
+        <div class="tabs-content" id="creators">
+          <div class="card">
+            <img
+              src="img/creators/1.jpg"
+              alt="Jason Reitman"
+              class="card-image"
+            />
+            <div class="card-text">
+              <h3 class="name">
+                Джейсон Райтман
+              </h3>
+              <span class="en-name">
+                Jason Reitman
+              </span>
+            </div>
+          </div>
+          <!-- /.card -->
+          <div class="card">
+            <img src="img/creators/2.jpg" alt="Gil Kenan" class="card-image" />
+            <div class="card-text">
+              <h3 class="name">
+                Гил Кинан
+              </h3>
+              <span class="en-name">
+                Gil Kenan
+              </span>
+            </div>
+          </div>
+          <!-- /.card -->
+          <div class="card">
+            <img
+              src="img/creators/3.jpg"
+              alt="Michael Beugg"
+              class="card-image"
+            />
+            <div class="card-text">
+              <h3 class="name">
+                Майкл Бегг
+              </h3>
+              <span class="en-name">
+                Michael Beugg
+              </span>
+            </div>
+          </div>
+          <!-- /.card -->
+          <div class="card">
+            <img
+              src="img/creators/4.jpg"
+              alt="Eric Steelberg"
+              class="card-image"
+            />
+            <div class="card-text">
+              <h3 class="name">
+                Эрик Стилберг
+              </h3>
+              <span class="en-name">
+                Eric Steelberg
+              </span>
+            </div>
+          </div>
+          <!-- /.card -->
+          <div class="card">
+            <img
+              src="img/creators/5.jpg"
+              alt="Rob Simonsen"
+              class="card-image"
+            />
+            <div class="card-text">
+              <h3 class="name">
+                Роб Симонсен
+              </h3>
+              <span class="en-name">
+                Rob Simonsen
+              </span>
+            </div>
+          </div>
+          <!-- /.card -->
+          <div class="card">
+            <img src="img/actors/6.jpg" alt="Dan Aykroyd" class="card-image" />
+            <div class="card-text">
+              <h3 class="name">
+                Дэн Эйкройд
+              </h3>
+              <span class="en-name">
+                Dan Aykroyd
+              </span>
+            </div>
+          </div>
+          <!-- /.card -->
+          <div class="card">
+            <img
+              src="img/creators/7.jpg"
+              alt="Dana E. Glauberman"
+              class="card-image"
+            />
+            <div class="card-text">
+              <h3 class="name">
+                Дана И. Глауберман
+              </h3>
+              <span class="en-name">
+                Dana E. Glauberman
+              </span>
+            </div>
+          </div>
+          <!-- /.card -->
+          <div class="card">
+            <img
+              src="img/creators/8.jpg"
+              alt="François Audouy"
+              class="card-image"
+            />
+            <div class="card-text">
+              <h3 class="name">
+                Франсуа Одуи
+              </h3>
+              <span class="en-name">
+                François Audouy
+              </span>
+            </div>
+          </div>
+          <!-- /.card -->
+        </div>
+        <!-- /.tabs-content -->
       </div>
       <!-- /.container -->
     </section>
     <section class="news">
       <div class="container">
         <h2 class="section-title section-news-title">Новости по теме</h2>
-        <div class="news-cards">
-          <div class="news-card">
-            <span class="news-date">31 марта 2020</span>
-            <h3 class="news-title">
-              «Морбиуса» и «Охотников за&nbsp;привидениями» перенесли на
-              следующий год
-            </h3>
+        <div class="swiper-container">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+              <div class="news-card">
+                <span class="news-date">31 марта 2020</span>
+                <h3 class="news-title">
+                  «Морбиуса» и «Охотников за&nbsp;привидениями» перенесли на
+                  следующий год
+                </h3>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="news-card">
+                <span class="news-date">9 декабря 2019</span>
+                <h3 class="news-title">
+                  Наследники: Вышел дебютный трейлер новых «Охотников за
+                  привидениями»
+                </h3>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="news-card">
+                <span class="news-date">11 ноября 2019</span>
+                <h3 class="news-title">
+                  Новые «Охотники за привидениями» обзавелись названием
+                </h3>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="news-card">
+                <span class="news-date">19 октября 2019</span>
+                <h3 class="news-title">
+                  Завершились съёмки новых «Охотников за привидениями»
+                </h3>
+              </div>
+            </div>
           </div>
-          <div class="news-card">
-            <span class="news-date">9 декабря 2019</span>
-            <h3 class="news-title">
-              Наследники: Вышел дебютный трейлер новых «Охотников за
-              привидениями»
-            </h3>
-          </div>
-          <div class="news-card">
-            <span class="news-date">11 ноября 2019</span>
-            <h3 class="news-title">
-              Новые «Охотники за привидениями» обзавелись названием
-            </h3>
-          </div>
-          <div class="news-card">
-            <span class="news-date">19 октября 2019</span>
-            <h3 class="news-title">
-              Завершились съёмки новых «Охотников за привидениями»
-            </h3>
-          </div>
+          <button class="button-next">
+            <img src="img/arrow.svg" alt="arrow" />
+          </button>
         </div>
-        <!-- /.news-cards -->
       </div>
     </section>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
