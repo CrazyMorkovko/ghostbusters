@@ -365,17 +365,12 @@ body {
   margin-bottom: 65px;
 }
 
-.news-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
 .news-card {
   flex-basis: 23%;
   background-color: #fff;
   padding: 30px 30px 36px 30px;
   border-radius: 5px;
+  min-height: 160px;
 }
 
 .news-card:last-child {
